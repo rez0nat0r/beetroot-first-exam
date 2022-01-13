@@ -1,0 +1,608 @@
+@import 'normalize';
+@import 'mixins';
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&family=Josefin+Sans:wght@300;400;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 1vw;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container {
+    width: 61vw;
+    margin: 0 auto;
+}
+
+// HEADER
+
+.header {
+    background-image: url('../img/header/header-bg.jpg');
+    @include background__img__position ();
+
+    &__content {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: 48px;
+        @include font__decoration__700 ();
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        color: $title__color;
+    }
+
+    &__subtitle {
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 22px;
+        @include font__decoration__400 ();
+        letter-spacing: 0.31em;
+        margin-bottom: 50px;
+        color: $title__color;
+    }
+
+    &__search {
+        display: flex;
+        margin-bottom: 120px;
+        background-color: $title__color;
+        border: 2px solid $title__color;
+    }
+
+    &__search::placeholder {
+        font-size: 14px;
+        @include font__decoration__400 ();
+        letter-spacing: 0.2em;
+    }
+
+    &__search .input__search {
+        height: 8vh;
+        width: 27vw;
+        border: none;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 0.2em;
+        color: #999999;
+        padding: 0 10px;
+    }
+
+    &__search .input__submit {
+        width: 9vw;
+        height: 8vh;
+        border: none;
+        background-color: $bacground__blue__color;
+        font-family: 'Aleo', serif;
+        font-size: 14px;
+        @include font__decoration__400 ();
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: left;
+        padding-left: 35px;
+        color: $title__color;
+        background-image: url('../img/header/search_icon.png');
+        background-repeat: no-repeat;
+        background-position: 90% 45%;
+        border: none;
+        cursor: pointer;
+        transition: background-color .5s;
+    }
+
+    &__search .input__submit:hover {
+        background-color: #4f515a;
+    }
+
+    &__scroll_down {
+        color: $title__color;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-size: 14px;
+        @include font__decoration__400 ();
+        letter-spacing: 0.2em;
+        margin-bottom: 15px;
+    }
+
+    &__scroll_chevron {
+        color: $title__color;
+    }
+}
+
+// NAV
+
+.nav {
+    background-color: $bacground__blue__color;
+    height: 11vh;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: block;
+        color: $title__color;
+        text-transform: uppercase;
+        font-size: 24px;
+        letter-spacing: 0.1em;
+        @include font__decoration__700 ();
+        display: flex;
+        align-items: center;
+    }
+
+    &__menu {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        list-style-type: none;
+    }
+
+    &__menu--item {
+        height: 11vh;
+        margin-left: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__menu--link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $title__color;
+        font-size: 14px;
+        font-family: 'Aleo', serif;
+        @include font__decoration__400 ();
+        transition: color .5s;
+    }
+
+    &__menu--link:hover {
+        color: $hover__color;
+    }
+    &__burger {
+        display: none;
+    }
+}
+
+// WHY CHOOSE US
+
+.choose {
+    min-height: 92vh;
+    background-image: url('../img/Why_choose_us/why_choose_us-bg.jpg');
+    @include background__img__position ();
+
+    &__content {
+        padding-top: 16vh;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content &__left,
+    &__content &__right {
+        width: 30vw;
+    }
+
+    &__title {
+        padding-top: 11vh;
+        font-family: 'Aleo', serif;
+        font-size: 36px;
+        @include font__decoration__400 ();
+        margin-bottom: 55px;
+        color: $title__color;
+    }
+
+    &__description {
+        font-size: 16px;
+        letter-spacing: 0.1em;
+        color: #b0aeae;
+        margin-bottom: 45px;
+        @include font__decoration__400 ();
+    }
+
+    &__first {
+        margin-bottom: 45px;
+    }
+
+    &__btn {
+        width: 13vw;
+        height: 60px;
+        line-height: 60px;
+        font-size: 16px;
+        font-family: 'Aleo', serif;
+        @include font__decoration__400 ();
+        letter-spacing: 0.075em;
+        text-transform: uppercase;
+        text-align: center;
+        color: $title__color;
+        background-color: $bacground__blue__color;
+        background-image: url('../img/btn-bg.png');
+        background-repeat: no-repeat;
+        background-position: left center;
+        cursor: pointer;
+        transition: background-color .5s;
+    }
+
+    &__btn:hover {
+        background-color: #4f515a;
+    }
+
+    &__right &__img1,
+    &__right &__img2 {
+        width: 19vw;
+        height: 29vh;
+    }
+
+    &__img1 {
+        margin: 0 0 5px 67px;
+        background-image: url('../img/Why_choose_us/why_choose_us-1.jpg');
+        @include background__img__position ();
+
+    }
+
+    &__img2 {
+        background-image: url('../img/Why_choose_us/why_choose_us-2.jpg');
+        @include background__img__position ();
+        float: right;
+    }
+
+    // Buttons
+
+    &__btns {
+        background-color: $hover__color;
+        padding: 50px 0 120px 0;
+    }
+
+    &__img {
+        width: 61vw;
+        height: 100%;
+        margin: 0 auto;
+    }
+}
+
+// Plate
+
+.plate {
+    min-height: 100vh;
+    padding-top: 31vh;
+
+    &__content {
+        margin: 0 auto;
+        padding-top: 31vh;
+        width: 30vw;
+        // height: 50vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 45px 0 50px 30px;
+        color: $title__color;
+    }
+
+    &__title {
+        font-size: 20px;
+        @include font__decoration__400 ();
+        letter-spacing: 0.075em;
+        margin-bottom: 25px;
+    }
+
+    &__description1 {
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        font-size: 20px;
+        @include font__decoration__400 ();
+    }
+
+    &__description2 {
+        font-size: 16px;
+        @include font__decoration__400 ();
+        margin-bottom: 45px;
+    }
+
+}
+
+// Plate LEFT
+
+.plate__left {
+    background-image: url('../img/Spain_1/spain-bg.jpg');
+    @include background__img__position ();
+
+    &_content {
+        float: left;
+    }
+
+}
+
+// Plate RIGHT
+
+.plate__right {
+    background-image: url('../img/Spain_2/spain_2-bg.jpg');
+    @include background__img__position ();
+
+    &_content {
+        float: right;
+    }
+
+}
+
+// What tourist say
+
+.review {
+    min-height: 100vh;
+    background-image: url('../img/What_our_tourist_say/what_tourist_say-bg.jpg');
+    @include background__img__position ();
+
+    &__content {
+        padding-top: 16vh;
+    }
+
+    &__title {
+        font-family: 'Aleo', serif;
+        font-size: 36px;
+        @include font__decoration__400 ();
+        color: $title__color;
+        text-align: center;
+        margin-bottom: 90px;
+    }
+
+    &__tourist {
+        height: 39vh;
+        background-color: $hover__color;
+        display: flex;
+    }
+
+    &__left {
+        width: 25vw;
+        height: 100%;
+        background-image: url('../img/What_our_tourist_say/what_tourist_say.jpg');
+        @include background__img__position ();
+    }
+
+    &__right {
+        flex-grow: 1;
+        padding-left: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 60px;
+    }
+
+    &__right_name {
+        font-size: 20px;
+        @include font__decoration__400 ();
+        color: $title__color;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    &__right_description {
+        width: 31vw;
+        font-size: 16px;
+        color: #e8e8e8;
+        letter-spacing: 0.1em;
+        @include font__decoration__400 ();
+    }
+
+    &__right_quotes {
+        font-size: 30px;
+        color: $bacground__blue__color;
+    }
+}
+
+// Footer 
+
+.footer {
+    height: 36vh;
+    background-color: $hover__color;
+    padding: 16vh 0 7vh 0;
+
+    &__content {
+        height: 15vh;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 24px;
+        @include font__decoration__700 ();
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: $title__color;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        @include font__decoration__400 ();
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin-bottom: 25px;
+        color: $title__color;
+    }
+
+    &__icons {
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icon {
+        width: 40px;
+        height: 100%;
+        background-size: 70%;
+        color: $title__color;
+        font-size: 20px;
+        text-align: center;
+        list-style-type: none;
+        cursor: pointer;
+        transition: color .5s;
+    }
+
+    &__icon:hover {
+        color: $bacground__blue__color;
+    }
+}
+
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header {
+        &__search .input__submit {
+            text-align: center;
+            padding-left: 0;
+            background-image: none;
+        }
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .header {
+        &__search .input__submit {
+            text-align: center;
+            padding-left: 0;
+            background-image: none;
+        }
+    }
+    .choose {
+        &__btns {
+            padding: 0;
+        }    
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .header {
+        &__search .input__submit {
+            text-align: center;
+            padding-left: 0;
+            background-image: none;
+        }
+    }
+    .nav {
+        &__menu {
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            left: -100%;
+            transition: top 0.4s;
+            z-index: 0;
+        }
+        &__menu--item {
+            text-align: center;
+            border: 1px solid #c8d8d6;
+            padding: 10px;
+            background: $bacground__blue__color;
+        }
+        &__burger--img {
+            display: inline-block;
+            width: 35px;
+            height: 3px;
+            position: relative;
+            top: 25px;
+            left: 30px;
+            background-color: #fff;
+            vertical-align: middle;
+    
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 9px;
+                display: inline-block;
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+            }
+    
+            &::before {
+                top: -9px;
+            }
+        }
+    
+        &__burger:checked~.menu {
+            top: 75px;
+            left: 68vw;
+        }
+    }
+
+    .choose {
+        &__btns {
+            padding: 0;
+        }    
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .header {
+        &__search .input__submit {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .nav {
+        &__menu {
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            left: -100%;
+            transition: top 0.4s;
+            z-index: 0;
+        }
+        &__menu--item {
+            text-align: center;
+            border: 1px solid #c8d8d6;
+            padding: 10px;
+            background: $bacground__blue__color;
+        }
+        &__burger--img {
+            display: inline-block;
+            width: 35px;
+            height: 3px;
+            position: relative;
+            top: 25px;
+            left: 30px;
+            background-color: #fff;
+            vertical-align: middle;
+    
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 9px;
+                display: inline-block;
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+            }
+    
+            &::before {
+                top: -9px;
+            }
+        }
+    
+        &__burger:checked~.menu {
+            top: 75px;
+            left: 68vw;
+        }
+    }
+
+    .choose {
+        &__btns {
+            padding: 0;
+        }    
+    }
+
+}
